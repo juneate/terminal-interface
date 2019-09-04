@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css?family=Cutive+Mono|VT323&display=swap');
+* {
+  font-size: inherit;
+  box-sizing: border-box;
+  padding:0;
+  margin: 0;
+}
+ul, li {list-style:none;}
+html {
+  font-size: 1.5rem;
+}
+body {
+  font-family: 'VT323', 'Cutive Mono', 'courier new';
+  color: rgb(107,255,165);
+  background-color: #222;
+  margin: 0.5rem;
+  text-shadow: 0 0 0.125em rgba(107,255,165, 0.2);
+}
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 1rem;
+}
+h1::before { content: "# "; }
+h2::before { content: "## "; }
+a {
+  color: inherit;
+}
+
+.about header {
+  background-color: rgb(107,255,165);
+  color: #222;
+  text-align: center;
+}
+.about footer {
+  margin: 1rem 0;
+}
+
+.commands {
+  background-color: rgb(107,255,165);
+  color: #222;
+  padding: 0.1rem;
+}
+.commands > dt, .commands > dd {
+  display: inline-block;
+}
+.cmd {
+  color: rgb(107,255,165);
+  background-color: #222;
+}
+.line {
+  line-height: 1.2;
+}
+.line::before {
+  content: "[roccopan@gmail.com]$ ";
+}
+.prompt {
+  position: relative;
+  display: inline-block;
+}
+.cursor {display: none;}
+.input:focus + .cursor {
+  content: "x";
+  position: absolute;
+  top: 0.1rem;
+  right: -1ch;
+  display: block;
+  background-color: rgb(107,255,165);
+  width: 1ch;
+  height: 1rem;
+  animation: BLINK infinite 1s;
+}
+.input {
+  background-color: transparent;
+  padding: 0; margin: 0; border: 0;
+  outline: 0;
+  font: inherit;
+  line-height: inherit;
+  width: 0ch;
+  color: rgb(107,255,165);
+  font-variant-ligatures: none;
+  cursor: none !important;
+  caret-color: transparent;
+}
+@keyframes BLINK {
+  0% { opacity: 1; }
+  25% { opacity: 0; }
+  75% { opacity: 0; }
+  100% { opacity: 1; }
+}
